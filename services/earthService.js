@@ -64,7 +64,6 @@ module.exports.create = async function(earth) {
     number_of_estate,
     price,
     moon_introduction,
-    date_signed,
     number_of_earth,
     owner_of_property_id,
     number_of_floor,
@@ -82,13 +81,14 @@ module.exports.create = async function(earth) {
 
   const { owner_of_property_name } = earth;
 
-  let createClientCs = `INSERT INTO client_cs (client_cs_id, client_cs_name, client_cs_phone)
+  let createClientCs = `INSERT INTO client_cs (client_cs_id, client_cs_name, client_cs_phone, date_signed)
                             VALUES ("${client_cs_id}",
                                      "${client_cs_name}",
-                                     "${client_cs_phone}")`;
+                                     "${client_cs_phone}", 
+                                     "${moment().format()}")`;
 
-  let createOwnerOfProperty = `INSERT INTO owner_of_property (id, owner_of_property_name)
-                                     VALUES ("${ownerOfPropertyId}","${owner_of_property_name}")`;
+  let createOwnerOfProperty = `INSERT INTO owner_of_property (id, owner_of_property_name, date_signed)
+                                     VALUES ("${ownerOfPropertyId}","${owner_of_property_name}", "${moment().format()}")`;
 
   let createEstate = `INSERT INTO estate (id, client_cs_id, estate_type_id, neighborhood_id, property_type_id, ownership_type_id, direction_id, area, balconies_space, number_of_estate, price, moon_introduction, date_signed, number_of_earth, owner_of_property_id, number_of_floor, number_of_room, number_of_bedrooms, number_of_bathrooms, number_of_ws, city_id, kaza_id, district_id, estate_description)
                                      VALUES ( "${estate_id}",
@@ -103,7 +103,7 @@ module.exports.create = async function(earth) {
                                               "${number_of_estate}",
                                               "${price}",
                                               "${moon_introduction}",
-                                              "${date_signed}",
+                                              "${moment().format()}",
                                               "${number_of_earth}",
                                               "${ownerOfPropertyId}",
                                               "${number_of_floor}",

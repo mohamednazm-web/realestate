@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2021 at 12:48 AM
+-- Generation Time: Dec 30, 2021 at 09:17 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -84,15 +84,19 @@ INSERT INTO `client_cs` (`client_cs_id`, `client_cs_name`, `client_cs_phone`, `d
 ('1e66060d', 'کاروان', '07503203351', NULL, NULL),
 ('386ba36b', 'کاروان', '07503203351', NULL, NULL),
 ('3c9fb635', 'کاروان', '07503203351', NULL, NULL),
-('4ab1d016', '', '', NULL, '2021-12-28'),
+('3f6c7a98', 'mohamed', '07503203351', NULL, NULL),
+('4ab1d016', 'کاروان', '07503203351', NULL, '2021-12-28'),
 ('60e94a77', 'کاروان', '07503203351', NULL, NULL),
-('6692cfce', '', '', NULL, '2021-12-28'),
+('6692cfce', 'کاروان', '07503203351', NULL, '2021-12-28'),
 ('6eae684f', 'mohamed', '07503203351', NULL, NULL),
 ('718adbbb', 'کاروان', '07503203351', NULL, NULL),
-('74f6223f', '', '', NULL, '2021-12-28'),
+('74f6223f', 'کاروان', '07503203351', NULL, '2021-12-28'),
+('75d42c4f', 'mohamed', '07503203351', NULL, NULL),
 ('955cddee', 'کاروان', '07503203351', NULL, NULL),
 ('a200b31b', 'کاروان', '07503203351', NULL, NULL),
 ('b1f13fc2', 'کاروان', '07503203351', NULL, '2021-12-30'),
+('c5bb6eab', 'mohamed', '07503203351', NULL, NULL),
+('c67e7f04', 'mohamed', '07503203351', NULL, NULL),
 ('ce4df2d5', 'mohamed', '07503203351', NULL, NULL),
 ('d2cf4469', 'کاروان', '07503203351', NULL, NULL);
 
@@ -287,11 +291,15 @@ INSERT INTO `estate` (`id`, `city_id`, `estate_type_id`, `price`, `moon_introduc
 ('5a17267d', 1, 1, 300, 22, '22.00', '0000-00-00', '2021-12-28', '66.00', 6677, 44, NULL, '30.00', 2, 55, 8, 2, 'kurdistan', 1, 1, 1, 1, 1, '31ebfbb7', 1, '01dc848a'),
 ('6bf9804e', 1, 1, 300, 22, '22.00', '0000-00-00', NULL, '66.00', 6677, 44, NULL, '30.00', 2, 55, 8, 2, 'kurdistan', 1, 1, 1, 1, 1, '85ab9d87', 1, '386ba36b'),
 ('6da2e3c5', 1, 1, 300, 22, '22.00', '0000-00-00', NULL, '66.00', 6677, 44, NULL, '30.00', 2, 55, 22, 2, 'new one', 1, 2, 1, 1, 1, '4eab18b1', 1, 'd2cf4469'),
+('6fa422c5', 1, 1, 55, 100, '44.00', '2017-11-05', NULL, '4554.00', 5544, 2, NULL, '44.00', 2, 2, 5, 2, 'the new estate', 1, 1, 1, 1, 1, '34474d01', 1, '3f6c7a98'),
 ('7edf09b3', 0, 0, 0, 0, NULL, '0000-00-00', '2021-12-28', '0.00', 0, 0, NULL, NULL, NULL, NULL, NULL, 0, '', 0, NULL, NULL, 0, 0, '95570cb1', 0, '6692cfce'),
 ('9db2ae43', 1, 1, 0, 0, '0.00', '0000-00-00', NULL, '0.00', 0, 0, NULL, '0.00', 0, 0, 0, 0, 'new one', 1, 1, 1, 1, 1, '8dfc7903', 1, '6eae684f'),
 ('a098f731', 1, 1, 300, 22, '22.00', '0000-00-00', NULL, '66.00', 6677, 44, NULL, '30.00', 2, 55, 8, 2, 'new one', 1, 1, 1, 1, 1, '627b1257', 1, '718adbbb'),
 ('a9f4be6b', 1, 2, 300, 22, '22.00', '0000-00-00', '2021-12-28', '66.00', 6677, 44, NULL, '30.00', 2, 55, 8, 2, 'kurdistan', 1, 1, 1, 1, 1, '2522133a', 1, '11fa5d7c'),
+('caeba7f9', 1, 1, 55, 100, '44.00', '2017-11-05', NULL, '4554.00', 5544, 2, NULL, '44.00', 2, 2, 5, 2, 'the new estate', 1, 1, 1, 1, 1, '28cd00b8', 1, 'c5bb6eab'),
 ('d5493fd8', 1, 1, 300, 22, '22.00', '0000-00-00', NULL, '66.00', 6677, 44, NULL, '30.00', 2, 55, 8, 2, 'new one', 1, 1, 1, 1, 1, 'b39b7950', 1, '955cddee'),
+('e8e8f72f', 1, 1, 55, 100, '44.00', '2017-11-05', NULL, '4554.00', 5544, 2, NULL, '44.00', 2, 2, 5, 2, 'the new estate', 1, 1, 1, 1, 1, 'f0d4b1cb', 1, '75d42c4f'),
+('f027bce5', 1, 1, 55, 100, '44.00', '2017-11-05', NULL, '4554.00', 5544, 2, NULL, '44.00', 2, 2, 5, 2, 'the new estate', 1, 1, 1, 1, 1, '52580358', 1, 'c67e7f04'),
 ('f4b65d2f', 1, 1, 1, 1, '1.00', '0000-00-00', '2021-12-30', '222.00', 1, 1, NULL, '1.00', 1, 1, 1, 1, 'new one', 1, 1, 1, 1, 1, 'a51fcd0a', 1, 'b1f13fc2');
 
 -- --------------------------------------------------------
@@ -393,7 +401,7 @@ INSERT INTO `ownership_type` (`id`, `ownership_type_name`) VALUES
 
 CREATE TABLE `owner_of_property` (
   `id` varchar(128) NOT NULL,
-  `owner_of_property_name` varchar(43) NOT NULL,
+  `owner_of_property_name` varchar(43) DEFAULT NULL,
   `date_signed` date DEFAULT NULL,
   `modified_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -404,9 +412,12 @@ CREATE TABLE `owner_of_property` (
 
 INSERT INTO `owner_of_property` (`id`, `owner_of_property_name`, `date_signed`, `modified_at`) VALUES
 ('2522133a', '66', NULL, '2021-12-28'),
+('28cd00b8', 'undefined', NULL, NULL),
 ('30fce9c3', '', NULL, '2021-12-28'),
 ('31ebfbb7', '66', NULL, '2021-12-28'),
+('34474d01', 'undefined', NULL, NULL),
 ('4eab18b1', 'fa', NULL, NULL),
+('52580358', 'undefined', NULL, NULL),
 ('627b1257', '66', NULL, NULL),
 ('85ab9d87', '66', NULL, NULL),
 ('8dfc7903', 'hama', NULL, NULL),
@@ -418,6 +429,7 @@ INSERT INTO `owner_of_property` (`id`, `owner_of_property_name`, `date_signed`, 
 ('a51fcd0a', 'hama', NULL, '2021-12-30'),
 ('b39b7950', '66', NULL, NULL),
 ('d6f0c5ae', '66', NULL, NULL),
+('f0d4b1cb', 'undefined', NULL, NULL),
 ('f42eda2c', '66', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -461,10 +473,10 @@ CREATE TABLE `request` (
   `request_cs_id` varchar(128) NOT NULL,
   `estate_type_id` int(11) NOT NULL,
   `neighborhood_id` int(11) NOT NULL,
-  `date_signed` date NOT NULL,
+  `date_signed` date DEFAULT NULL,
   `property_type_id` int(11) NOT NULL,
   `description` text NOT NULL,
-  `modified_at` varchar(43) NOT NULL
+  `modified_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -472,9 +484,13 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`id`, `request_cs_id`, `estate_type_id`, `neighborhood_id`, `date_signed`, `property_type_id`, `description`, `modified_at`) VALUES
-('32d79466d269a1c5', '06de9b5fde5d27b6', 1, 1, '2021-12-29', 1, 'rwkn', ''),
-('570620fa344927d9', 'b1ca4917c065ec83', 1, 1, '2021-12-29', 1, 'rwkn', ''),
-('d4a52f20d7a2faf4', 'fe1fc16822fb898f', 0, 0, '2021-12-10', 0, 'undefined', '');
+('0df528ec3c0b3b83', '003e8387f448dd0a', 1, 1, '2021-12-30', 2, 'new', NULL),
+('32d79466d269a1c5', '06de9b5fde5d27b6', 1, 1, '2021-12-29', 1, 'rwkn', NULL),
+('570620fa344927d9', 'b1ca4917c065ec83', 1, 1, '2021-12-29', 1, 'rwkn', NULL),
+('780494c1b3f5839c', '2c1ffa1edaf8d29d', 1, 1, '2021-12-30', 2, 'new', NULL),
+('a07231063cbab9b6', '8e5be2947baec953', 1, 1, '2021-12-30', 1, 'new one', NULL),
+('c34c83f086d5f844', '42d1450195975a3c', 1, 1, '2021-12-30', 1, 'new one', NULL),
+('d4a52f20d7a2faf4', 'fe1fc16822fb898f', 1, 1, '2021-12-10', 1, 'best one', NULL);
 
 -- --------------------------------------------------------
 
@@ -486,8 +502,8 @@ CREATE TABLE `request_cs` (
   `request_cs_id` varchar(128) NOT NULL,
   `request_cs_name` varchar(43) NOT NULL,
   `request_cs_phone` varchar(43) NOT NULL,
-  `date_signed` varchar(43) NOT NULL,
-  `modified_at` varchar(34) NOT NULL
+  `date_signed` varchar(43) DEFAULT NULL,
+  `modified_at` varchar(34) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -495,9 +511,13 @@ CREATE TABLE `request_cs` (
 --
 
 INSERT INTO `request_cs` (`request_cs_id`, `request_cs_name`, `request_cs_phone`, `date_signed`, `modified_at`) VALUES
-('06de9b5fde5d27b6', 'saman', '07503203351', '2021-12-29T23:36:35+03:00', ''),
-('b1ca4917c065ec83', 'saman', '07503203351', '2021-12-29T23:35:35+03:00', ''),
-('fe1fc16822fb898f', 'undefined', 'undefined', '2021-12-10T22:03:19+03:00', '');
+('003e8387f448dd0a', 'karwan', '07503203351', '2021-12-30T21:45:27+03:00', NULL),
+('06de9b5fde5d27b6', 'saman', '07503203351', '2021-12-29T23:36:35+03:00', NULL),
+('2c1ffa1edaf8d29d', 'saman', '07503203351', '2021-12-30T21:44:23+03:00', NULL),
+('42d1450195975a3c', 'hello', '07503203351', '2021-12-30T15:31:02+03:00', NULL),
+('8e5be2947baec953', 'karwan', '07503203351', '2021-12-30T23:10:45+03:00', NULL),
+('b1ca4917c065ec83', 'saman', '07503203351', '2021-12-29T23:35:35+03:00', NULL),
+('fe1fc16822fb898f', 'tofiq', '07503203351', '2021-12-10T22:03:19+03:00', NULL);
 
 -- --------------------------------------------------------
 
