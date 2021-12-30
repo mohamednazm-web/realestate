@@ -255,9 +255,9 @@ app.get('/ar', function(req, res) {
 //////////////////////////////////////////////////END TRANSLATION/////////////////////////////////////////////
 // 1) Global Middleware
 // Implement CORS
-app.use(cors());
+// app.use(cors());
 
-app.options('*', cors());
+// app.options('*', cors());
 //app.options('/api/v1/tours/:id', cors());
 
 //app.use(helmet());
