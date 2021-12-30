@@ -128,10 +128,10 @@ module.exports.updateOne = async function(request, id) {
     request_cs_phone
   } = request;
   let sql = `
-      UPDATE Request, Request_cs
+      UPDATE request, request_cs
       SET
-      Request.estate_type_id =?, Request.neighborhood_id =?, Request.property_type_id =?, Request.description =?, Request.modified_at =?,
-      Request_cs.request_cs_name =?, Request_cs.request_cs_phone =?, Request_cs.modified_at =?
+      request.estate_type_id =?, request.neighborhood_id =?, request.property_type_id =?, request.description =?, request.modified_at =?,
+      request_cs.request_cs_name =?, request_cs.request_cs_phone =?, request_cs.modified_at =?
       WHERE Request.request_cs_id = Request_cs.request_cs_id AND Request.id =?;
     `;
   try {

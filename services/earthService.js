@@ -90,7 +90,7 @@ module.exports.create = async function(earth) {
   let createOwnerOfProperty = `INSERT INTO owner_of_property (id, owner_of_property_name, date_signed)
                                      VALUES ("${ownerOfPropertyId}","${owner_of_property_name}", "${moment().format()}")`;
 
-  let createEstate = `INSERT INTO estate (id, client_cs_id, estate_type_id, neighborhood_id, property_type_id, ownership_type_id, direction_id, area, balconies_space, number_of_estate, price, moon_introduction, date_signed, number_of_earth, owner_of_property_id, number_of_floor, number_of_room, number_of_bedrooms, number_of_bathrooms, number_of_ws, city_id, kaza_id, district_id, estate_description)
+  let createestate = `INSERT INTO estate (id, client_cs_id, estate_type_id, neighborhood_id, property_type_id, ownership_type_id, direction_id, area, balconies_space, number_of_estate, price, moon_introduction, date_signed, number_of_earth, owner_of_property_id, number_of_floor, number_of_room, number_of_bedrooms, number_of_bathrooms, number_of_ws, city_id, kaza_id, district_id, estate_description)
                                      VALUES ( "${estate_id}",
                                               "${client_cs_id}",
                                               "${estate_type_id}",
@@ -120,7 +120,7 @@ module.exports.create = async function(earth) {
     if (res.affectedRows == 1) {
       const res1 = await DB.query(createOwnerOfProperty);
       if (res1.affectedRows == 1) {
-        const res2 = await DB.query(createEstate);
+        const res2 = await DB.query(createestate);
         return res2.affectedRows == 1;
       }
     }
@@ -157,23 +157,23 @@ module.exports.updateOne = async function(earth, id) {
     owner_of_property_name
   } = earth;
   let sql = `
-        UPDATE Estate,Client_cs, Owner_of_property
+        UPDATE estate,Client_cs, Owner_of_property
         SET
-        Estate.city_id=?, Estate.estate_type_id=?, Estate.price=?, Estate.moon_introduction=?, 
-        Estate.area=?, Estate.modified_at=?, Estate.number_of_estate=?, 
-        Estate.number_of_earth=?, Estate.number_of_floor=?,
-        Estate.number_of_balconies=?, Estate.balconies_space=?, 
-        Estate.number_of_bedrooms=?, Estate.number_of_bathrooms=?, 
-        Estate.number_of_room=?, Estate.number_of_ws=?, 
-        Estate.estate_description=?, Estate.property_type_id=?, Estate.kaza_id=?, 
-        Estate.district_id=?, Estate.direction_id=?, Estate.neighborhood_id=?, Estate.ownership_type_id=?, 
+        estate.city_id=?, estate.estate_type_id=?, estate.price=?, estate.moon_introduction=?, 
+        estate.area=?, estate.modified_at=?, estate.number_of_estate=?, 
+        estate.number_of_earth=?, estate.number_of_floor=?,
+        estate.number_of_balconies=?, estate.balconies_space=?, 
+        estate.number_of_bedrooms=?, estate.number_of_bathrooms=?, 
+        estate.number_of_room=?, estate.number_of_ws=?, 
+        estate.estate_description=?, estate.property_type_id=?, estate.kaza_id=?, 
+        estate.district_id=?, estate.direction_id=?, estate.neighborhood_id=?, estate.ownership_type_id=?, 
         Client_cs.client_cs_name=?, Client_cs.client_cs_phone=?, Client_cs.modified_at=?,
         Owner_of_property.owner_of_property_name=?, Owner_of_property.modified_at=? 
         WHERE 
-        Estate.client_cs_id=Client_cs.client_cs_id 
+        estate.client_cs_id=Client_cs.client_cs_id 
         AND 
-        Estate.owner_of_property_id=Owner_of_property.id 
-        AND Estate.id=?;`;
+        estate.owner_of_property_id=Owner_of_property.id 
+        AND estate.id=?;`;
   try {
     const result = await DB.query(sql, [
       city_id,
