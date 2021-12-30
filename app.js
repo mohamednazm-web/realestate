@@ -255,10 +255,10 @@ app.get('/ar', function(req, res) {
 //////////////////////////////////////////////////END TRANSLATION/////////////////////////////////////////////
 // 1) Global Middleware
 // Implement CORS
-// app.use(cors());
+app.use(cors());
 
-// app.options('*', cors());
-//app.options('/api/v1/tours/:id', cors());
+app.options('*', cors());
+// app.options('/api/v1/tours/:id', cors());
 
 //app.use(helmet());
 
@@ -318,13 +318,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/v1/earth', earthRouter);
-app.use('/api/v1/request', requestRouter);
-
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can not find ${req.originalUrl} on this server!`, 404));
-});
-
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
@@ -332,6 +325,13 @@ app.use(function(req, res, next) {
     'Origin, X-Requested-With, Content-Type, Accept'
   );
   next();
+});
+
+app.use('/api/v1/earth', earthRouter);
+app.use('/api/v1/request', requestRouter);
+
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can not find ${req.originalUrl} on this server!`, 404));
 });
 
 //app.use(globalErrorHandler);
