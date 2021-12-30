@@ -21,6 +21,9 @@ exports.getAllRequests = catchAsync(async (req, res, next) => {
 });
 
 exports.addRequest = catchAsync(async (req, res, next) => {
+  if (!req.body) {
+    return res.send({ message: 'nothing to submitted' });
+  }
   const result = await requestService.create(req.body);
   if (result) {
     res.send(result);
