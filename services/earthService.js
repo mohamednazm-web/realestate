@@ -157,7 +157,7 @@ module.exports.updateOne = async function(earth, id) {
     owner_of_property_name
   } = earth;
   let sql = `
-        UPDATE estate,Client_cs, Owner_of_property
+        UPDATE estate,client_cs, owner_of_property
         SET
         estate.city_id=?, estate.estate_type_id=?, estate.price=?, estate.moon_introduction=?, 
         estate.area=?, estate.modified_at=?, estate.number_of_estate=?, 
@@ -167,12 +167,12 @@ module.exports.updateOne = async function(earth, id) {
         estate.number_of_room=?, estate.number_of_ws=?, 
         estate.estate_description=?, estate.property_type_id=?, estate.kaza_id=?, 
         estate.district_id=?, estate.direction_id=?, estate.neighborhood_id=?, estate.ownership_type_id=?, 
-        Client_cs.client_cs_name=?, Client_cs.client_cs_phone=?, Client_cs.modified_at=?,
-        Owner_of_property.owner_of_property_name=?, Owner_of_property.modified_at=? 
+        client_cs.client_cs_name=?, client_cs.client_cs_phone=?, client_cs.modified_at=?,
+        owner_of_property.owner_of_property_name=?, owner_of_property.modified_at=? 
         WHERE 
-        estate.client_cs_id=Client_cs.client_cs_id 
+        estate.client_cs_id=client_cs.client_cs_id 
         AND 
-        estate.owner_of_property_id=Owner_of_property.id 
+        estate.owner_of_property_id=owner_of_property.id 
         AND estate.id=?;`;
   try {
     const result = await DB.query(sql, [
