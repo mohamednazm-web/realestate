@@ -26,13 +26,13 @@ module.exports.create = async function(request) {
     request_cs_phone
   } = request;
 
-  let addRequestCs = `INSERT INTO request_cs (request_cs_id, request_cs_name, request_cs_phone, date_signed)
+  let addrequestCs = `INSERT INTO request_cs (request_cs_id, request_cs_name, request_cs_phone, date_signed)
                               VALUES ("${request_cs_id}",
                                       "${request_cs_name}",
                                       "${request_cs_phone}",
                                       "${moment().format()}")`;
 
-  let addRequest = `INSERT INTO request (id, request_cs_id, estate_type_id, neighborhood_id, property_type_id,date_signed, description)
+  let addrequest = `INSERT INTO request (id, request_cs_id, estate_type_id, neighborhood_id, property_type_id,date_signed, description)
                               VALUES ( "${request_id}",
                                         "${request_cs_id}",
                                         "${estate_type_id}",
@@ -41,7 +41,7 @@ module.exports.create = async function(request) {
                                         "${moment().format()}",
                                         "${description}")`;
 
-  const lastRequest = `SELECT *, request.id
+  const lastrequest = `SELECT *, request.id
               FROM request
               INNER JOIN request_cs ON request.request_cs_id = request_cs.request_cs_id
               INNER JOIN estate_type ON request.estate_type_id = estate_type.id
@@ -49,11 +49,11 @@ module.exports.create = async function(request) {
               INNER JOIN property_type ON request.property_type_id = property_type.id ORDER BY request.id DESC LIMIT 1000;`;
 
   try {
-    const res = await DB.query(addRequestCs);
+    const res = await DB.query(addrequestCs);
     if (res.affectedRows == 1) {
-      const res1 = await DB.query(addRequest);
+      const res1 = await DB.query(addrequest);
       if (res1.affectedRows == 1) {
-        return await DB.query(lastRequest);
+        return await DB.query(lastrequest);
       }
     }
   } catch (error) {
@@ -79,7 +79,7 @@ module.exports.find = async function() {
   }
 };
 
-module.exports.getRequestCs = async function() {
+module.exports.getrequestCs = async function() {
   let sql = `SELECT * FROM request_cs`;
 
   try {
@@ -132,7 +132,7 @@ module.exports.updateOne = async function(request, id) {
       SET
       request.estate_type_id =?, request.neighborhood_id =?, request.property_type_id =?, request.description =?, request.modified_at =?,
       request_cs.request_cs_name =?, request_cs.request_cs_phone =?, request_cs.modified_at =?
-      WHERE Request.request_cs_id = Request_cs.request_cs_id AND Request.id =?;
+      WHERE request.request_cs_id = request_cs.request_cs_id AND request.id =?;
     `;
   try {
     let result = await DB.query(sql, [
