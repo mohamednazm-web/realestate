@@ -26,13 +26,13 @@ module.exports.create = async function(request) {
     request_cs_phone
   } = request;
 
-  let addrequestCs = `INSERT INTO request_cs (request_cs_id, request_cs_name, request_cs_phone, date_signed)
+  let addRequestCs = `INSERT INTO request_cs (request_cs_id, request_cs_name, request_cs_phone, date_signed)
                               VALUES ("${request_cs_id}",
                                       "${request_cs_name}",
                                       "${request_cs_phone}",
                                       "${moment().format()}")`;
 
-  let addrequest = `INSERT INTO request (id, request_cs_id, estate_type_id, neighborhood_id, property_type_id,date_signed, description)
+  let addRequest = `INSERT INTO request (id, request_cs_id, estate_type_id, neighborhood_id, property_type_id,date_signed, description)
                               VALUES ( "${request_id}",
                                         "${request_cs_id}",
                                         "${estate_type_id}",
@@ -41,7 +41,7 @@ module.exports.create = async function(request) {
                                         "${moment().format()}",
                                         "${description}")`;
 
-  const lastrequest = `SELECT *, request.id
+  const lastRequest = `SELECT *, request.id
               FROM request
               INNER JOIN request_cs ON request.request_cs_id = request_cs.request_cs_id
               INNER JOIN estate_type ON request.estate_type_id = estate_type.id
@@ -49,11 +49,11 @@ module.exports.create = async function(request) {
               INNER JOIN property_type ON request.property_type_id = property_type.id ORDER BY request.id DESC LIMIT 1000;`;
 
   try {
-    const res = await DB.query(addrequestCs);
+    const res = await DB.query(addRequestCs);
     if (res.affectedRows == 1) {
-      const res1 = await DB.query(addrequest);
+      const res1 = await DB.query(addRequest);
       if (res1.affectedRows == 1) {
-        return await DB.query(lastrequest);
+        return await DB.query(lastRequest);
       }
     }
   } catch (error) {
@@ -79,7 +79,7 @@ module.exports.find = async function() {
   }
 };
 
-module.exports.getrequestCs = async function() {
+module.exports.getRequestCs = async function() {
   let sql = `SELECT * FROM request_cs`;
 
   try {
@@ -92,7 +92,7 @@ module.exports.getrequestCs = async function() {
 };
 
 module.exports.findOne = async function(id) {
-  let sql = `
+  const sql = `
       SELECT
         request_cs.request_cs_id,
         request.id,

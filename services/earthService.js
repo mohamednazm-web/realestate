@@ -90,7 +90,7 @@ module.exports.create = async function(earth) {
   let createOwnerOfProperty = `INSERT INTO owner_of_property (id, owner_of_property_name, date_signed)
                                      VALUES ("${ownerOfPropertyId}","${owner_of_property_name}", "${moment().format()}")`;
 
-  let createestate = `INSERT INTO estate (id, client_cs_id, estate_type_id, neighborhood_id, property_type_id, ownership_type_id, direction_id, area, balconies_space, number_of_estate, price, moon_introduction, date_signed, number_of_earth, owner_of_property_id, number_of_floor, number_of_room, number_of_bedrooms, number_of_bathrooms, number_of_ws, city_id, kaza_id, district_id, estate_description)
+  let createEstate = `INSERT INTO estate (id, client_cs_id, estate_type_id, neighborhood_id, property_type_id, ownership_type_id, direction_id, area, balconies_space, number_of_estate, price, moon_introduction, date_signed, number_of_earth, owner_of_property_id, number_of_floor, number_of_room, number_of_bedrooms, number_of_bathrooms, number_of_ws, city_id, kaza_id, district_id, estate_description)
                                      VALUES ( "${estate_id}",
                                               "${client_cs_id}",
                                               "${estate_type_id}",
@@ -120,7 +120,7 @@ module.exports.create = async function(earth) {
     if (res.affectedRows == 1) {
       const res1 = await DB.query(createOwnerOfProperty);
       if (res1.affectedRows == 1) {
-        const res2 = await DB.query(createestate);
+        const res2 = await DB.query(createEstate);
         return res2.affectedRows == 1;
       }
     }
