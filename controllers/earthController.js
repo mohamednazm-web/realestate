@@ -26,6 +26,9 @@ exports.getAllEarths = catchAsync(async (req, res, next) => {
 });
 
 exports.addEarth = catchAsync(async (req, res, next) => {
+  if (!req.body) {
+    return res.send({ message: 'nothing to submitted' });
+  }
   const result = await earthService.create(req.body);
   if (!result) {
     next();
